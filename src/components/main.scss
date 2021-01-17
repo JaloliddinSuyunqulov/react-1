@@ -1,0 +1,60 @@
+
+.icon{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  mask-size: 100%;
+  vertical-align: sub;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  &.icon-user{
+    mask-image: url("../assets/icons/user.svg");
+    -webkit-mask-image: url("../assets/icons/user.svg");
+  }
+}
+
+.admin-layout{
+  .admin-navbar{
+    height: 50px;
+    background-color: #eee;
+  }
+  .admin-content{
+    .admin-content-left{
+      width: 300px;
+      height: calc(100vh - 50px);
+      background-color: #00AB7E;
+      overflow-y: auto;
+      padding: 10px 15px;
+      .user-image{
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        .icon{
+          width: 25px;
+          height: 25px;
+        }
+      }
+      h5{
+        font-size: 16px;
+      }
+      p{
+        font-size: 12px;
+      }
+    }
+    .admin-content-right{
+      width: calc(100vw - 300px);
+      height: calc(100vh - 50px);
+      background-color: #ddd;
+      overflow-y: auto;
+    }
+  }
+}
