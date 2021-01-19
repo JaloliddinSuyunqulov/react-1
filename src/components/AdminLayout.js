@@ -8,7 +8,7 @@ class AdminLayout extends Component {
                 <div className='admin-navbar'>
 
                 </div>
-                <div className='admin-content'>
+                <div className='admin-content d-flex'>
                     <div className='admin-content-left'>
                         <div className='d-flex align-items-center'>
                             <div className="user-image">
@@ -20,11 +20,11 @@ class AdminLayout extends Component {
                             </div>
                         </div>
                         <ul className='nav flex-column mt-4'>
-                            <li className='nav-item'><Link className='nav-link' to="/admin">Yangiliklar</Link></li>
-                            <li className='nav-item'><Link className='nav-link' to="/admin">Menyular</Link></li>
-                            <li className='nav-item'><Link className='nav-link' to="/admin">Biz haqimizda</Link></li>
-                            <li className='nav-item'><Link className='nav-link' to="/admin">Sport</Link></li>
-                            <li className='nav-item'><Link className='nav-link' to="/admin">Foydalanuvchilar</Link></li>
+                            <li className='nav-item'><Link className='nav-link text-white' to="/admin">Yangiliklar</Link></li>
+                            <li className='nav-item'><Link className='nav-link text-white' to="/admin">Menyular</Link></li>
+                            <li className='nav-item'><Link className='nav-link text-white' to="/admin">Biz haqimizda</Link></li>
+                            <li className='nav-item'><Link className='nav-link text-white' to="/admin">Sport</Link></li>
+                            <li className='nav-item'><Link className='nav-link text-white' to="/admin">Foydalanuvchilar</Link></li>
                         </ul>
                     </div>
                     <div className='admin-content-right'>

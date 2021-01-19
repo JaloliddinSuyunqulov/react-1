@@ -2,6 +2,7 @@ import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
+import {ToastContainer} from "react-toastify";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path='/admin' component={Admin}/>
         </Switch>
       </BrowserRouter>
+        <ToastContainer/>
     </div>
   );
 }

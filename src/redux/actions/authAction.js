@@ -1,5 +1,6 @@
 import axios from "axios";
 import {API_PATH, TOKEN_NAME} from "../../tools/constants";
+import {toast} from "react-toastify";
 
 export function loginUser(data) {
     axios.post(API_PATH + 'auth/login', data)
@@ -10,6 +11,7 @@ export function loginUser(data) {
         })
         .catch((error) => {
             console.log(error);
+            toast("Xatolik");
         });
     return {
         type: "",
