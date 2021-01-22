@@ -22,12 +22,13 @@ export default class HomeCarousel extends Component {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
+            dots: true,
         };
         return (
             <div className='home-carousel'>
                 <Slider {...settings}>
                     <CustomSlide img1='images/Rectangle 4.png' img2='images/image 8.png'/>
-                    <CustomSlide img1='images/Rectangle 4.png' img2='images/image 8.png'/>
+                    <CustomSlide img1='images/Rectangle 88.png' img2='images/image 8.png'/>
                     <CustomSlide img1='images/Rectangle 4.png' img2='images/image 8.png'/>
                 </Slider>
             </div>

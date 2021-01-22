@@ -6,7 +6,7 @@ import {loginUser} from '../redux/actions/authAction';
 class Login extends Component {
     render() {
         const login = (event, values) => {
-            this.props.loginUser(values);
+            this.props.loginUser(values, this.props.history);
         };
 
         return (
@@ -29,8 +29,12 @@ class Login extends Component {
                                             type='password'
                                             required
                                         />
+                                        <Button type='submit' disabled={this.props.isLoading} color='success' className='btn-block'>
+                                            {this.props.isLoading ? <span className='spinner-border spinner-border-sm'/> : ""}
+                                            Login
+                                        </Button>
                                     </AvForm>
-                                    <Button color='success' className='btn-block'>Login</Button>
+
                                 </CardBody>
                             </Card>
                         </Col>
@@ -41,4 +45,11 @@ class Login extends Component {
     }
 }
 
-export default connect(null, {loginUser})(Login);
+const mapStateToProps = (state) => {
+    console.log(state);
+    return{
+        isLoading: state.login.isLoading,
+    }
+};
+
+export default connect(mapStateToProps, {loginUser})(Login);

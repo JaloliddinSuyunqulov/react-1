@@ -3,7 +3,6 @@ import NavigationBar from "../components/NavigationBar";
 import HomeHeader from "../components/HomeHeader";
 import News from "../components/News";
 import HomeCarousel from "../components/HomeCarousel";
-import CorporationNews from "../components/CorporationNews";
 import Complains from "../components/Complains";
 import HomeMedia from "../components/HomeMedia";
 import Organisations from "../components/Organisations";
@@ -15,8 +14,8 @@ class Home extends Component {
                 <NavigationBar/>
                 <HomeHeader/>
                 <HomeCarousel/>
-                <News/>
-                <CorporationNews/>
+                <News title='Yangiliklar'/>
+                <News title='Korxonamiz yangiliklari'/>
                 <Complains/>
                 <HomeMedia/>
                 <Organisations/>
