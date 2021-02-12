@@ -34,7 +34,6 @@ class Login extends Component {
                                             Login
                                         </Button>
                                     </AvForm>
-
                                 </CardBody>
                             </Card>
                         </Col>

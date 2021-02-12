@@ -11,7 +11,7 @@ class NewsOverall extends Component {
             <div>
                 <NavigationBar/>
                 <HomeHeader/>
-                <NewsContent/>
+                <NewsContent match={this.props.match}/>
                 <News title="So'ngi yangililar"/>
                 <HomeFooter/>
             </div>

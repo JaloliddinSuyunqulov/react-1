@@ -2,18 +2,15 @@ import {UPDATE_STATE} from "../actionTypes/adminNewsActionTypes";
 
 const initialState = {
     modalOpen: false,
-    selectedImage: "",
+    isSubMenu: false,
     generatedUrl: "",
-    subMenus: [],
-    news: [],
-    selectedNews: {},
-    selectedIdForDelete: null,
+    menus: [],
     deleteModalOpen: false,
-    newsByMenu: [],
-    oneNews: {}
+    selectedIdForDelete: null,
+    selectedMenu: {},
 };
 
-export const adminNewsReducer = (state = initialState, action) => {
+export const adminMenusReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_STATE:
             return {...state, ...action.payload};

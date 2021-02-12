@@ -1,23 +1,19 @@
 import React, {Component} from 'react';
 import NavigationBar from "../components/NavigationBar";
 import HomeHeader from "../components/HomeHeader";
-import News from "../components/News";
-import HomeCarousel from "../components/HomeCarousel";
 import Complaints from "../components/Complaints";
-import HomeMedia from "../components/HomeMedia";
-import Organisations from "../components/Organisations";
 import HomeFooter from "../components/HomeFooter";
-class Home extends Component {
+import Organisations from "../components/Organisations";
+import NewsCategories from "../components/NewsCategories";
+
+class CategoryPage extends Component {
     render() {
         return (
             <div>
                 <NavigationBar/>
                 <HomeHeader/>
-                <HomeCarousel/>
-                <News title='Yangiliklar'/>
-                <News title='Korxonamiz yangiliklari'/>
+                <NewsCategories url={this.props.match.params.url} match={this.props.match}/>
                 <Complaints/>
-                <HomeMedia/>
                 <Organisations/>
                 <HomeFooter/>
             </div>
@@ -25,4 +21,5 @@ class Home extends Component {
     }
 }
 
-export default Home;
+
+export default CategoryPage;

@@ -6,23 +6,43 @@ import {ToastContainer} from "react-toastify";
 import AdminNews from "./components/AdminNews";
 import AdminMenus from "./components/AdminMenus";
 import NewsOverall from "./pages/NewsOverall";
+import NotFound from "./components/NotFound";
+import PrivateRoute from "./components/PrivateRoute";
+import CategoryPage from "./pages/CategoryPage";
+import {connect} from "react-redux";
+import {RingLoader} from "react-spinners";
 
-function App() {
+function App(props) {
   return (
     <div>
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route exact path='/login' component={Login}/>
-          <Route exact path='/admin' component={Admin}/>
-          <Route exact path='/admin/news' component={AdminNews}/>
-          <Route exact path='/admin/menus' component={AdminMenus}/>
-          <Route exact path='/news' component={NewsOverall}/>
+          <Route exact path='/category/:url' component={CategoryPage}/>
+          <Route exact path='/category/:url/news/:newsUrl' component={NewsOverall}/>
+          <PrivateRoute exact path='/admin' component={Admin}/>
+          <PrivateRoute exact path='/admin/news' component={AdminNews}/>
+          <PrivateRoute exact path='/admin/menus' component={AdminMenus}/>
+          <Route component={NotFound}/>
         </Switch>
       </BrowserRouter>
-        <ToastContainer/>
+      <ToastContainer/>
+      {props.pageLoading ?
+          <div className="page-loader">
+            <RingLoader
+                loading={props.pageLoading}
+                color="#008F48"
+            />
+          </div> : ""
+      }
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return{
+    pageLoading: state.app.pageLoading
+  }
+};
+export default connect(mapStateToProps, null)(App);

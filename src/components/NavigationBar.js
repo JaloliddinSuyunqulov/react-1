@@ -21,18 +21,18 @@ class NavigationBar extends Component {
                         </div>
                         <div className='d-flex align-items-center'>
                             <div className='dropdown mr-5'>
-                                <button type='button' data-toggle='dropdown'>
+                                <Link to='/admin'>
                                     na russkom
-                                </button>
+                                </Link>
                                 <div className='dropdown-menu'>
                                     <Link className='dropdown-item' to='/'>Na Uzbekiskom</Link>
                                     <Link className='dropdown-item' to='/'>Na Angliskom</Link>
                                 </div>
                             </div>
-                            <Link to='/' className='d-flex align-items-center home-phone text-decoration-none'>
+                            <a href='tel: 998946416674' className='d-flex align-items-center home-phone text-decoration-none'>
                                 <span className='icon icon-phone'/>
                                 <div>99872 335-41-16</div>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </Container>

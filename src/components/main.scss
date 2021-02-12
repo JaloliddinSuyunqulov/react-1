@@ -65,6 +65,7 @@
 //******************* MAIN ************************//
 body{
   background-color: #FAFAFA;
+  user-select: none;
   .admin-layout{
     .admin-navbar{
       height: 50px;
@@ -191,25 +192,33 @@ body{
     .home-header-menu{
       position: relative;
       color: black;
-      text-decoration: none;
       &:hover{
         color: #008F48;
+        cursor: pointer;
       }
       .home-header-sub-menus{
         position: absolute;
         display: none;
         width: 170px;
-        background-color: #00AB7E;
+        background: #00AB7E;
         border-bottom-right-radius: 8px;
         border-bottom-left-radius: 8px;
         z-index: 2;
         top: 100%;
-        left: -10px;
+        left: -20px;
         .sub-menu-item{
           padding: 10px 20px;
           color: #FAFAFA;
+          text-decoration: none;
+          display: block;
           &:hover{
             background-color: #008F48;
+          }
+          &:first-child{
+            background: linear-gradient(0deg, #00AB7E 80%, #00AB7E, lightgrey);
+            &:hover{
+              background: linear-gradient(0deg, #008F48 80%, #008F48, lightgrey);
+            }
           }
           &:last-child{
             border-bottom-right-radius: 8px;
@@ -219,8 +228,11 @@ body{
       }
       &:hover{
         .home-header-sub-menus{
-          display: block!important;
+          display: block;
         }
+      }
+      .hideDropdown{
+        display: none;
       }
     }
     div{
@@ -297,37 +309,6 @@ body{
   }
   .home-news{
     padding: 0;
-    .home-card{
-      margin: 0 15px;
-      .icon-info{
-        color: rgba(0, 0, 0, 0.3);
-        .icon{
-          opacity: 0.6;
-        }
-      }
-      button{
-        border-radius: 10px;
-        padding: 5px 30px;
-        border-color: #008F48;
-        color: #008F48;
-        &:hover{
-          background-color: #008F48;
-          color: white;
-        }
-      }
-      &:hover{
-        box-shadow: 0 5px 10px lightgrey;
-        .font-weight-bold{
-          color: #008F48;
-        }
-        .icon-info{
-          color: rgba(0, 0, 0, 0.5);
-          .icon{
-            opacity: 1;
-          }
-        }
-      }
-    }
     .slick-next{
       top: -20px;
       right: 20px;
@@ -359,6 +340,41 @@ body{
       }
     }
   }
+  .home-card{
+    margin: 0 15px;
+    img{
+      height: 222px;
+      object-fit: contain;
+    }
+    .icon-info{
+      color: rgba(0, 0, 0, 0.3);
+      .icon{
+        opacity: 0.6;
+      }
+    }
+    a{
+      border-radius: 10px;
+      padding: 5px 30px;
+      border-color: #008F48;
+      color: #008F48;
+      &:hover{
+        background-color: #008F48;
+        color: white;
+      }
+    }
+    &:hover{
+      box-shadow: 0 5px 10px lightgrey;
+      .font-weight-bold{
+        color: #008F48;
+      }
+      .icon-info{
+        color: rgba(0, 0, 0, 0.5);
+        .icon{
+          opacity: 1;
+        }
+      }
+    }
+  }
   .home-complains{
     background: linear-gradient(90deg, white, #E7E7E7);
     box-shadow: 0 4px 4px lightgrey;
@@ -384,13 +400,15 @@ body{
       .nav-item{
         margin: 0 10px;
         .nav-link{
-          border: none;
+          border: 1px solid white;
           background-color: white;
           border-radius: 5px;
           padding: 10px 25px;
           color: black;
           &:hover{
             cursor: pointer;
+            border: 1px solid #008F48;
+            color: #008F48;
           }
           &.active{
             background-color: #008F48;
@@ -449,15 +467,22 @@ body{
   .home-organisations{
     .col{
       position: relative;
-      .position-absolute{
+      .home-organisation-link{
         display: none;
       }
       &:hover{
-        .position-absolute{
+        background-color: rgba(#008F48, 0.5);
+        cursor: pointer;
+        .home-organisation-layer{
+            filter: blur(2px);
+        }
+        .home-organisation-link{
+          position: absolute;
+          top: 0;
           left: 0;
           right: 0;
-          top: 0;
           bottom: 0;
+          z-index: 2;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -465,10 +490,6 @@ body{
           font-weight: 600;
           color: white;
         }
-        background-color: rgba(#008F48, 0.6);
-        filter: blur(1px);
-        opacity: 0.5;
-        cursor: pointer;
       }
     }
   }
@@ -554,10 +575,40 @@ body{
       }
     }
   }
-  .news-complains{
+  .news-complaints{
     padding: 30px;
     border-radius: 8px;
     background-color: #F2F2F2;
+  }
+  .news-categories{
+    .home-card{
+      margin: 0;
+    }
+  }
+  .delete-image{
+    top: 21px;
+    right: 6px;
+    position: absolute;
+    background-color: white !important;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page-loader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
   }
 }
 
